@@ -1,0 +1,12 @@
+.container-numberset{
+    max-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-numberset span {
+    font-size: 90px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    margin-right: 5px;
+}

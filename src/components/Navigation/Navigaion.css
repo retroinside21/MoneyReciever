@@ -1,0 +1,36 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #eceff1;
+    margin-bottom: 40px;
+}
+.navigation img{
+    width: 265px;
+}
+
+.reference{
+  
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #b8bdce;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: normal;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+    color: #0d356c;
+    position: relative;
+}
+
+.reference::before{
+    content: '';
+    background: url("../../img/questionIcon.png") no-repeat right center;
+    background-size: contain;
+    width: 25px;
+    height: 30px;
+    position: absolute;
+    left: 7px;
+    top: 12px;
+}
