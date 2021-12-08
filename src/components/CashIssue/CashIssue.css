@@ -1,21 +1,22 @@
 .input-item {}
 
 .input-item input {
-    max-width: 350px;
+    max-width: 185px;
     border: 2px solid gainsboro;
-    padding: 20px;
+    padding: 23px 20px;
     border: 1px solid #b8bdce;
     background-color: white;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: lighter;
     box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.26);
     color: #0d356c;
     margin-right: 30px;
+    margin-bottom: 10px;
 }
 
 .input-item button {
-    margin: 0px 5px 30px 0px;
+    margin: 0px 5px 10px 0px;
     padding: 20px;
     border: 1px solid #b8bdce;
     background-color: white;

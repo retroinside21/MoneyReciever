@@ -7,6 +7,7 @@
 .container{
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 .container-input{
     display: flex;
@@ -17,6 +18,14 @@
     color: #0d356c;
     font-weight: normal;
     margin-bottom: 20px;
+}
+
+.description{
+    font-size: 22px;
+    color: #000;
+    font-weight: think;
+    border: 1px solid whitesmoke;
+    padding: 10px;
 }
 
 .btns-change{
