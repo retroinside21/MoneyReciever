@@ -8,6 +8,16 @@ import { useState } from "react";
 
 
 let iWantToMoney = (amountRequired, limits) =>{
+  let nominals = Object.keys(limits).map(Number).sort((a,b)=>b - a)
+  let values = Object.values(limits).map(Number).sort((a,b)=>a - b)
+  const reducer = (previousValue, currentValue) => previousValue + currentValue
+  let getMoney = []
+  for(let i = 0; i <= nominals.length-1; i++){
+    let res = nominals[i] * values[i]
+    getMoney.push(res)
+  }
+  let sum = getMoney.reduce(reducer)
+  if(amountRequired>sum) return {}
   function collect(amount, nominals) {
      if(amount === 0 || amount >= 40000000) return {}
    
@@ -26,7 +36,6 @@ let iWantToMoney = (amountRequired, limits) =>{
      } 
     
   }
-   let nominals = Object.keys(limits).map(Number).sort((a,b)=>b - a)
    return collect(amountRequired, nominals)
 }
 
@@ -34,7 +43,7 @@ let iWantToMoney = (amountRequired, limits) =>{
 
 
 let limits = [
-  {5000: 100, 2000: 400, 1000: 1000, 500 : 3000, 200: 5000, 100: 8000, 50: 100}, 
+  {5000: 100, 2000: 400, 1000: 1000, 500 : 3000, 200: 5000, 100: 8000, 50: 10000}, 
   {5000: 476, 2000: 345, 1000: 6741, 500 : 4362, 200: 234, 100: 1643, 50: 3450}, 
   {5000: 234, 2000: 678, 1000: 845, 500 : 2451, 200: 9654, 100: 2345, 50:234}, 
   {5000: 546, 2000: 562, 1000: 2543, 500 : 4365, 200: 2154, 100: 124, 50: 342}, 
@@ -60,9 +69,6 @@ function addCount(count){
   setInputCount(obj)
   setObject(obj)
   setFlag(true)
- 
-  if(obj===undefined){setInputCount('Таких купюр нет')}
-  console.log(obj)
 }
 
 function compareObj(obj1,obj2) {
@@ -104,7 +110,7 @@ let moneyCount = moneyCounts.map(el=>{
   return <div className="description" key={el}>{el}</div>
 })
 
-let mooney = isEmpty(inputCount) ? 'Таких купюр нет' : moneyCount
+let mooney = isEmpty(inputCount) ? 'Банкомат не может выдать такую сумму' : moneyCount
 
 let visibleMoney = flag ? mooney : null
 
